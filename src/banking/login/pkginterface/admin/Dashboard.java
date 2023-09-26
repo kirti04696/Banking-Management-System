@@ -4,6 +4,8 @@
  */
 package banking.login.pkginterface.admin;
 
+import banking.login.pkginterface.LoginFrame;
+
 /**
  *
  * @author Kirti Sharma
@@ -93,6 +95,16 @@ public class Dashboard extends javax.swing.JFrame {
 
         jMenu4.setBackground(new java.awt.Color(51, 0, 255));
         jMenu4.setText("Log out");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu4ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -124,6 +136,17 @@ public class Dashboard extends javax.swing.JFrame {
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        
+    }//GEN-LAST:event_jMenu4ActionPerformed
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        // TODO add your handling code here:
+        this.hide();
+        LoginFrame login = new LoginFrame();
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments

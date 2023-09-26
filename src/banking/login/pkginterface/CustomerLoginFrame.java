@@ -6,6 +6,7 @@ package banking.login.pkginterface;
 import banking.login.pkginterface.user.Dashboard;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import model.User;
 
 
 /**
@@ -138,13 +139,31 @@ public class CustomerLoginFrame extends javax.swing.JFrame {
        try{
           Class.forName("com.mysql.jdbc.Driver");  
           Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/bank_management_system?useSSL=false&allowPublicKeyRetrieval=true","root","Gniot@2023"); 
-          PreparedStatement p = con.prepareStatement("select * from user where user_name = ? and password =?;");
+          PreparedStatement p = con.prepareStatement("select user_id, name, user_name, password from user where user_name = ? and password =?;");
            p.setString(1, username);
            p.setString(2, pass);
-           p.execute();
-           this.hide();
-           Dashboard user = new Dashboard();
-           user.setVisible(true);
+           ResultSet result = p.executeQuery();
+           int user_count =0;
+           User user;
+           while(result.next()){
+//               System.out.println(result.getInt(1) +":"+result.getString(2)+":"+result.getString(3)+":"+result.getString(4));
+                user_count++;
+                user = new User(
+                        result.getInt(1),
+                        result.getString(2),
+                        result.getString(3),
+                        result.getString(4),
+                        true
+                );
+           }
+           if(user_count == 1){
+                this.hide();
+                Dashboard userdashboard = new Dashboard();
+                userdashboard.setVisible(true);
+           }else{
+               JOptionPane.showMessageDialog(rootPane, "Wrong username or password!");
+           }
+           
        }
        catch(Exception e){
            JOptionPane.showMessageDialog(rootPane, e);

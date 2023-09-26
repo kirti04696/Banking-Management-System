@@ -4,6 +4,8 @@
  */
 package banking.login.pkginterface.employee;
 
+import banking.login.pkginterface.LoginFrame;
+
 /**
  *
  * @author Kirti Sharma
@@ -70,6 +72,16 @@ public class Dashboard extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("log out");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
+        jMenu6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu6ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
@@ -93,6 +105,18 @@ public class Dashboard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
+         this.hide();
+        LoginFrame login = new LoginFrame();
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenu6ActionPerformed
+
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+        this.hide();
+        LoginFrame login = new LoginFrame();
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenu6MouseClicked
 
     /**
      * @param args the command line arguments
