@@ -14,14 +14,22 @@ public class User {
     private String password;
     private String user_name;
     private boolean isBlocked;
+    private String address;
+    private String contact;
 
-    public User(int user_id, String name, String password, String user_name, boolean isBlocked) {
+    public User(int user_id, String name, String password, String user_name, boolean isBlocked, String address, String contact) {
         this.user_id = user_id;
         this.name = name;
         this.password = password;
         this.user_name = user_name;
         this.isBlocked = isBlocked;
+        this.address = address;
+        this.contact = contact;
     }
+   
+
+    
+    
 
     public User() {
     }
@@ -66,10 +74,28 @@ public class User {
         this.isBlocked = isBlocked;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "user_id=" + user_id + ", name=" + name + ", password=" + password + ", user_name=" + user_name + ", isBlocked=" + isBlocked + '}';
+        return "User{" + "user_id=" + user_id + ", name=" + name + ", password=" + password + ", user_name=" + user_name + ", isBlocked=" + isBlocked + ", address=" + address + ", contact=" + contact + '}';
     }
+
     
+   
     
 }

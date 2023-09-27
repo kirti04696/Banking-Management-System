@@ -153,7 +153,10 @@ public class CustomerLoginFrame extends javax.swing.JFrame {
                         result.getString(2),
                         result.getString(3),
                         result.getString(4),
-                        true
+                        true,
+                        result.getString(6),
+                        result.getString(7)
+                        
                 );
            }
            if(user_count == 1){
