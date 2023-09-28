@@ -5,6 +5,7 @@
 package banking.login.pkginterface.employee;
 
 import banking.login.pkginterface.LoginFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -59,7 +60,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Employee Dashboard");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 6, 188, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 188, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Total Withdraw amout ");
@@ -101,12 +102,22 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel13.setBackground(new java.awt.Color(153, 204, 255));
         jLabel13.setOpaque(true);
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 270));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 270));
 
         jMenu1.setText("View Records");
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Open Account");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Close Account");
@@ -157,6 +168,16 @@ public class Dashboard extends javax.swing.JFrame {
         LoginFrame login = new LoginFrame();
         login.setVisible(true);
     }//GEN-LAST:event_jMenu6MouseClicked
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+       OpenAccount newAccount = new OpenAccount();
+        this.hide();
+        newAccount.setVisible(true);
+    }//GEN-LAST:event_jMenu2MouseClicked
 
     /**
      * @param args the command line arguments

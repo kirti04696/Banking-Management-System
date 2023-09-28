@@ -17,7 +17,8 @@ public class User {
     private String address;
     private String contact;
 
-    public User(int user_id, String name, String password, String user_name, boolean isBlocked, String address, String contact) {
+    public User(int user_id, String name, String password, String user_name, 
+            boolean isBlocked, String address, String contact) {
         this.user_id = user_id;
         this.name = name;
         this.password = password;

@@ -70,6 +70,16 @@ public class Dashboard extends javax.swing.JFrame {
 
         jMenuItem1.setBackground(new java.awt.Color(51, 0, 255));
         jMenuItem1.setText("Add Emp");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseClicked(evt);
+            }
+        });
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("View Emp ");
@@ -146,6 +156,18 @@ public class Dashboard extends javax.swing.JFrame {
         LoginFrame login = new LoginFrame();
         login.setVisible(true);
     }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
+        AddEmployee add = new AddEmployee();
+        this.hide();
+        add.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+         AddEmployee add = new AddEmployee();
+        this.hide();
+        add.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments

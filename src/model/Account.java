@@ -11,15 +11,13 @@ import java.util.Date;
  * @author Kirti Sharma
  */
 public class Account {
-    private int acc_id;
     private long acc_no;
-    private String acc_holder;
+    private int acc_holder;
     private Date opening_date;
     private int created_by;
     private int balance;
 
-    public Account(int acc_id, long acc_no, String acc_holder, Date opening_date, int created_by, int balance) {
-        this.acc_id = acc_id;
+    public Account(long acc_no, int acc_holder, Date opening_date, int created_by, int balance) {
         this.acc_no = acc_no;
         this.acc_holder = acc_holder;
         this.opening_date = opening_date;
@@ -30,14 +28,6 @@ public class Account {
     public Account() {
     }
 
-    public int getAcc_id() {
-        return acc_id;
-    }
-
-    public void setAcc_id(int acc_id) {
-        this.acc_id = acc_id;
-    }
-
     public long getAcc_no() {
         return acc_no;
     }
@@ -46,11 +36,11 @@ public class Account {
         this.acc_no = acc_no;
     }
 
-    public String getAcc_holder() {
+    public int getAcc_holder() {
         return acc_holder;
     }
 
-    public void setAcc_holder(String acc_holder) {
+    public void setAcc_holder(int acc_holder) {
         this.acc_holder = acc_holder;
     }
 
@@ -80,7 +70,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" + "acc_id=" + acc_id + ", acc_no=" + acc_no + ", acc_holder=" + acc_holder + ", opening_date=" + opening_date + ", created_by=" + created_by + ", balance=" + balance + '}';
+        return "Account{" + "acc_no=" + acc_no + ", acc_holder=" + acc_holder + ", opening_date=" + opening_date + ", created_by=" + created_by + ", balance=" + balance + '}';
     }
     
     
